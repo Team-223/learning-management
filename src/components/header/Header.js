@@ -5,10 +5,10 @@ function Header() {
     return (
         <div className={styles.header__container}>
             <div className={styles.header__left}>
-                <img src='/images/fullLogo.svg' alt='logo' />
+                <img src='../images/company-logo.png' alt='logo' />
             </div>
             <div className={styles.header__right}>
-                <img src='/images/login-btn.svg' alt='login' />
+                <img src='/images/login.png' alt='login' />
                 <h3 className={styles.login}>Login</h3>
             </div>
         </div>
