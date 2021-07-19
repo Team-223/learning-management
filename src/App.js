@@ -1,11 +1,16 @@
 
 import './App.css';
-import LandingPage from './pages/LandingPage'
+// import React,{useState} from 'react';
+// import StudentExercise from './components/studentModules/StudentExercise';
+import StudentModules from './components/studentModules/StudentModules';
 
 function App() {
+ 
+
   return (
     <div className="App">
-      <LandingPage />
+      <StudentModules  />
+      
     </div>
   );
 }
