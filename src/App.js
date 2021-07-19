@@ -1,4 +1,4 @@
-import Filter from './components/Filter';
+import Filter from './components/header/Filter';
 import './App.css';
 
 function App() {
