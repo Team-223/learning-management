@@ -1,0 +1,84 @@
+/* .modules__container {
+    width: 818px;
+    height: 538px;
+    background: #F9F6F6;
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.modules__row {
+    width: 58%;
+    height: 70px;
+    background: #f2eded;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;   
+}
+
+.modules__row:hover {
+    background: #e4dcdc;
+}
+
+.modules__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px;
+    flex-grow: 1;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+.modules__titile {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.modules__right {
+    padding-right: 20px;
+    
+}
+.module__arrow {
+    
+}
+
+
+
+/* ************************** exercise Section ************************* */
+
+
+
+.exercise__row {
+    /* transition: all 0.5s ease-in-out;   */
+    transition: all ease-in 0.2s,  linear 0.5s;
+    width: 56%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #bbb3b3;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+   cursor: pointer;
+}
+
+.exercise__icon{
+    margin-right: 15px;
+}
+
+.exercise__title {
+    font-size: 21px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.exercise__title:hover {
+    color: #484747;
+}

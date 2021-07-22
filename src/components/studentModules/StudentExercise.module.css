@@ -1,0 +1,37 @@
+.exercise__container {
+    /* position: absolute;
+    top: 290px;
+    left: 300px; */
+    width: 818px;
+    height: 227px;
+    background: rgba(225, 220, 220, 0.63);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.exercise__row {    
+    width: 90%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #bbb3b3;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.exercise__icon{
+    margin-right: 15px;
+}
+
+.exercise__title {
+    font-size: 21px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.exercise__title:hover {
+    color: #484747;
+}
