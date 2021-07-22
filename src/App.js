@@ -1,16 +1,12 @@
-
+import Header from './components/header/Header'
 import './App.css';
-// import React,{useState} from 'react';
-// import StudentExercise from './components/studentModules/StudentExercise';
-import StudentModules from './components/studentModules/StudentModules';
+import LandingPage from './pages/LandingPage'
 
 function App() {
- 
-
   return (
     <div className="App">
-      <StudentModules  />
-      <StudentModules />
+      <Header />
+      <LandingPage />
     </div>
   );
 }
