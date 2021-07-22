@@ -1,6 +1,9 @@
 import React from 'react'
 import Header from '../components/header/Header'
 import styles from './LandingPage.module.css';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+//import { auth } from './firebase';
+
 
 function LandingPage() {
     return (
@@ -12,7 +15,9 @@ function LandingPage() {
             <div className={styles.landingpage__middle}>
                 <div className={styles.landingpage__middle__left}>
                     <h1 className={styles.text}>Get your path with coding</h1>
-                    <button className={styles.sign_btn}>Sing up & code</button>
+                    <Link to='/login'>
+                        <button className={styles.sign_btn}>Sing up & code</button>
+                    </Link>
                 </div>
                 <div className={styles.landingpage__middle__right}>
                     <img className={styles.image} src='/images/landing-page.png' alt='landing-page' />

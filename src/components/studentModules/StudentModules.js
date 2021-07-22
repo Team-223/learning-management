@@ -3,6 +3,7 @@ import styles from './StudentModules.module.css';
 import StudentExercise from './StudentExercise';
 import arrowDown from './arrow-down.svg';
 import arrowUp from './arrow-up.svg'
+import Announcement from '../announcement/Announcement'
 
 function StudentModules() {
     const [expanded, setExpanded] = useState(false);
