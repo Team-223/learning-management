@@ -1,0 +1,68 @@
+.setting__container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.setting_icon {
+    cursor: pointer;
+}
+
+.setting__options {
+    width: 292px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #D1F0D8;
+    border-radius: 10px;
+  
+}
+
+.darkmode , .useremail, .username, .chgpass, .del{
+  
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    width: 241px;
+    height: 52px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.darkmode, .username, .chgpass {
+    background: #FFFFFF;
+    cursor: pointer;
+   
+}
+.darkmode:hover , .username:hover, .chgpass:hover {
+    background: #f5f3f3;
+}
+
+.useremail {
+    color: rgba(0, 0, 0, 0.51);
+    padding-top: 10px;
+}
+
+.username, .chgpass {
+    color: #000000;
+}
+
+.del {
+    background: #c53c3c;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.del:hover {
+    background: #da5959;
+}
+
+hr {
+    width: 80%;
+}
+

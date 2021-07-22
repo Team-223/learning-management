@@ -1,13 +1,12 @@
-
+import Header from './components/header/Header'
 import './App.css';
-import Setting from './settingComponent/Setting';
-// import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/LandingPage'
 
 function App() {
   return (
     <div className="App">
-      {/* <LandingPage /> */}
-      <Setting />
+      <LandingPage />
+     
     </div>
   );
 }
