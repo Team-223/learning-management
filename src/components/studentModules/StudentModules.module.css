@@ -1,0 +1,50 @@
+.modules__container {
+    width: 818px;
+    height: 538px;
+    background: #F9F6F6;
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modules__row {
+    width: 100%;
+    height: 70px;
+    background: #f2eded;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    position: relative;
+    
+}
+
+.modules__row:hover {
+    background: #e4dcdc;
+}
+
+.modules__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px;
+    flex-grow: 1;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+.modules__titile {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.modules__right {
+    width: 10%;
+    height: auto;
+}
