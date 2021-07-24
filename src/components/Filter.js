@@ -37,8 +37,6 @@ export default Filter
 const Wrap = styled.div `
     height: 420px;
     width: 282px;
-    left: 48px;
-    top: 530px;
     border-radius: 5px;
     border: 3px solid #00000033;
     box-shadow: 0px 4px 4px 4px #00000040;
@@ -51,12 +49,10 @@ const Wrap = styled.div `
 const SearchBar = styled.div `
     height: 24px;
     width: 245px;
-    left: 52px;
-    top: 594px;
-    border-radius: 10px;
-    border: 1px solid #000000;
 `
 const Input = styled.input`
+    width: 245px;
+    height: 24px;
     border: none;
     margin: 5px;
     outline: none;
@@ -64,8 +60,6 @@ const Input = styled.input`
 const Select = styled.select`
     height: 26px;
     width: 258px;
-    left: 60px;
-    top: 662px;
     border-radius: 0px;
     box-shadow: 2px 4px 4px 4px #00000040;
     border: none;
