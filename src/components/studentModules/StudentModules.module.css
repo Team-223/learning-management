@@ -1,15 +1,12 @@
-/* .modules__container {
-    width: 818px;
-    height: 538px;
-    background: #F9F6F6;
-    border-radius: 27px;
+.modules__container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-} */
+} 
 
 .modules__row {
-    width: 58%;
+    width: 100%;
     height: 70px;
     background: #f2eded;
     border-radius: 10px;

@@ -1,0 +1,14 @@
+.announcement__container {
+    width: 700px;
+    height: 43px;
+    background: #DD404A;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 18px;
+    margin-bottom: 20px;
+
+}
