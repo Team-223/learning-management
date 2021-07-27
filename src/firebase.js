@@ -1,16 +1,33 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/firestore'
+import 'firebase/auth';
 
-const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyB2y7YbtN9GiATooxlWvbshTYamPy0Amow",
-    authDomain: "hip-spanner-320515.firebaseapp.com",
-    projectId: "hip-spanner-320515",
-    storageBucket: "hip-spanner-320515.appspot.com",
-    messagingSenderId: "51299533288",
-    appId: "1:51299533288:web:0a231cac692447c0a6245d",
-    measurementId: "G-EWCLET8Y6M"
-  });
 
-  const db = firebase.firestore();
-  const auth = firebase.auth();
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMANI,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCEKT,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+};
+
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+  
+
+
+
+// Initialize other services on firebase instance
+// firebase.firestore() // <- needed if using firestore
+// firebase.functions() // <- needed if using httpsCallable
+
+// import 'firebase/firestore' // <- needed if using firestore
+// import 'firebase/functions' // <- needed if using httpsCallable
 
   export { db, auth };
+
+  export default firebase;

@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/header/Header'
 import styles from './LandingPage.module.css';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-//import { auth } from './firebase';
+
 
 
 function LandingPage() {
