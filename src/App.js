@@ -5,6 +5,7 @@ import Header from './components/header/Header'
 import './App.css';
 import LandingPage from './pages/LandingPage'
 import StudentDashboard from './pages/StudentDashboard';
+import courseCard from './component/courseCard';
 
 function App() {
 //   useEffect(()=> {
@@ -33,7 +34,8 @@ function App() {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/login' component={Login} />
     
-        <Route exact path='/student-dashboard' component={StudentDashboard} />
+        <PrivateRoute exact path='/student-dashboard' component={StudentDashboard} />
+        <Route exact path='/course' component={courseCard} />
        </Router> 
 
 
