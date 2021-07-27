@@ -8,6 +8,9 @@ import PrivateRoute from './PrivateRoute'
 import ContextProvider from './Context';
 import courseCard from './component/courseCard';
 import TeacherDashboard from './pages/TeacherDashboard';
+import AddAssignement from './pages/AddAssignment';
+import StudentModules from './components/studentModules/StudentModules';
+import AddAnouncement from './pages/AddAnouncement';
 
 function App() {
   return (
@@ -19,6 +22,10 @@ function App() {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/course' component={courseCard} />
         <Route exact path='/teacher-dashboard' component={TeacherDashboard} />
+        <Route exact path='/add-assignment' component={AddAssignement} />
+        <Route exact path='/course-module' component={StudentModules} />
+        <Route exact path='/add-announcements' component={AddAnouncement} />
+        {/* <Route exact path='/grades' component={Grades} /> */}
        </Router> 
     </ContextProvider>
 

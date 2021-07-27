@@ -6,6 +6,7 @@ import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import Filter from '../components/Filter'
 import Header from '../components/header/Header'
 import { Container } from '@material-ui/core'
+import CourseCard from '../component/courseCard'
 
 function StudentDashboard() {
     return (
@@ -25,10 +26,7 @@ function StudentDashboard() {
                 </div>
                 <div className={styles.dashboard__modules}>
                     <Announcement />
-                    <StudentModules />
-                    <StudentModules />
-                    <StudentModules />
-                    <StudentModules />
+                    <CourseCard />
                 </div>
             </div>
     )

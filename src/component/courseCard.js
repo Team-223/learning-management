@@ -2,19 +2,22 @@ import React from 'react';
 import './courseCard.css';
 import './courseInfo';
 import CourseInfo from './courseInfo';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function CourseCard() {
     return (
         <div className="outer__container">
-            <CourseInfo 
-            courseName="HTML"
-            numOfLessons={15}
-            numOfHours={4}
-            numOfTests={2}
-            teacherName="Lem Canady"
-            skillLevel="Beginner"
-            teacherIcon="https://i.insider.com/5e32f2a324306a19834af322?width=2000&format=jpeg&auto=webp"
-            />
+            <Link to='/course-page'>
+                <CourseInfo 
+                courseName="HTML"
+                numOfLessons={15}
+                numOfHours={4}
+                numOfTests={2}
+                teacherName="Lem Canady"
+                skillLevel="Beginner"
+                teacherIcon="https://i.insider.com/5e32f2a324306a19834af322?width=2000&format=jpeg&auto=webp"
+                />
+            </Link>
             <CourseInfo 
             courseName="JavaScript"
             numOfLessons={20}
