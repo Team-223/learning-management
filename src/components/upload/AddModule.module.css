@@ -1,0 +1,43 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #DBE6F8;
+    width: 900px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.course__name, .module__name, .exercise  {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 50px;
+    width: 100%;
+}
+
+.exercise textarea {
+    height: 400px;
+    width: 400px;
+}
+
+.submit {
+    width: 290px;
+    height: 56px;
+    background: #484DC0;
+    border-radius: 35px;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    border: none;
+    cursor: pointer
+}
+
+.submit:hover {
+     background: #6f72cc
+}

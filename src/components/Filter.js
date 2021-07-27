@@ -50,20 +50,18 @@ const Wrap = styled.div `
 `
 const SearchBar = styled.div `
     height: 24px;
-    width: 245px;
-    left: 52px;
-    top: 594px;
+
     border-radius: 10px;
-    border: 1px solid #000000;
 `
 const Input = styled.input`
+    width: 100%;
     border: none;
     margin: 5px;
     outline: none;
 `
 const Select = styled.select`
     height: 26px;
-    width: 258px;
+    width: 100%;
     left: 60px;
     top: 662px;
     border-radius: 0px;
