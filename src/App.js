@@ -11,14 +11,17 @@ import TeacherDashboard from './pages/TeacherDashboard';
 
 function App() {
   return (
+
+
+    // Adding private route to the student dashboard page
     <ContextProvider>
 
       <Router>
-        <Route exact path='/student-dashboard' component={StudentDashboard} />
+        <PrivateRoute exact path='/student-dashboard' component={StudentDashboard} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/' component={LandingPage} />
         <Route exact path='/course' component={courseCard} />
         <Route exact path='/teacher-dashboard' component={TeacherDashboard} />
+        <Route exact path='/' component={LandingPage} />
        </Router> 
     </ContextProvider>
 

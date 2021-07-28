@@ -20,7 +20,13 @@
     position: absolute;
     top: 110px;
     left: 0;
+    padding: 20px;
+    cursor: pointer;
 
+}
+
+.landingpage__searchcourse:hover {
+    color: rgb(17, 15, 146);
 }
 
 /* Middle Section styles */
@@ -89,6 +95,7 @@
     position: fixed;
     bottom: 20px;
     left: 0;
+    padding: 20px;
 }
 
 .teacherIcon {
@@ -110,6 +117,7 @@ footer {
     align-items: flex-end;
     bottom: 0;
     position: fixed;
+    margin-left: 38px;
 }
 
 @media (max-width: 700px) {

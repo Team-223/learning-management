@@ -4,14 +4,14 @@ import { MyContext } from "./Context";
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { user } = useContext(MyContext);
+    const { user, gituser, name} = useContext(MyContext);
 
     return (
         <Route
             {...rest}
             render={
                 props => {
-                    if (user) {
+                    if ( (user) || (gituser) || (name)){
                         return <Component {...rest} {...props} />
                     } else {
                      

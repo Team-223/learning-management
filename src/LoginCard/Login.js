@@ -1,12 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import styles from './Login.module.css'
 import firebase from '../firebase';
 import 'firebase/auth';
 import { auth } from "../firebase";
 import { useHistory } from "react-router-dom";
+import { MyContext } from "../Context";
 
 function Login() {
+    
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [changeState, setChangeState] = useState('Log In'); 
+    const { setGituser, setName } = useContext(MyContext);
 
+    // **************************** FUNCTIONS ****************************
     const handleLogin = async() => {
         let provider = new firebase.auth.GoogleAuthProvider();
         await firebase.auth().signInWithPopup(provider)
@@ -21,7 +29,7 @@ function Login() {
             .then((auth) => {
                 history.push('/student-dashboard')
         })
-        .catch(error => alert(error.message))
+        .catch(error => alert(error.message, 'No user found, Please Register'));
     }
 
     const register = e => {
@@ -38,12 +46,42 @@ function Login() {
             .catch(error => alert(error.message))
     }
 
+    const resetPass = () => {
+        firebase.auth().sendPasswordResetEmail({email})
+        .then(() => {
+            // Password reset email sent!
+            // ..
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+        });
+    }
+
+
+    const githubLogin = async() => {
+        let provider = new firebase.auth.GithubAuthProvider();
+        
+        await firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((results) => {
+            console.log(results);
+            let usr = results;
+            setGituser(usr);
+            history.push('/student-dashboard')
+        })
+        .catch((error) => console.log(error));
+        
+    }
+
+
+   console.log('name', setName)
+   console.log('git', setGituser)
+
     const changeToRegister = () => setChangeState('Register');
 
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [changeState, setChangeState] = useState('Log In');
 
 
     return (
@@ -52,7 +90,9 @@ function Login() {
             <div  className={styles.login__container}>
                 <div className={styles.login__buttons}>
 
-                    <button className={styles.github}>Log in With GitHub</button>
+                    <button 
+                        onClick={githubLogin} 
+                        className={styles.github}>Log in With GitHub</button>
                     <button  
                         onClick={()=> handleLogin()}
                     
@@ -76,6 +116,15 @@ function Login() {
                         placeholder='Password'
                         type='password' 
                     />
+                    {
+                        changeState == 'Register'?  
+                            <input
+                                onChange={ e => setName(e.target.value)}
+                                placeholder='FullName'
+                                type='text' 
+                            />
+                        : ''
+                    }
                     <button 
                         onClick={changeState === 'Log In' ? signIn: register}
                         className={styles.submit__btn}
