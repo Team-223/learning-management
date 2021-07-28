@@ -10,7 +10,9 @@ function LandingPage() {
         <div className={styles.landingpage__container}>
             <Header />
             <div className={styles.landingpage__searchcourse}>
-                <h3 >Search for courses</h3>
+                <Link to='/course'>
+                    <h3 >Search for courses</h3>
+                </Link>
             </div>
             <div className={styles.landingpage__middle}>
                 <div className={styles.landingpage__middle__left}>

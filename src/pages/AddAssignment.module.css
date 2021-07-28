@@ -1,0 +1,10 @@
+.assignment__container {
+    display: flex;
+    margin: 100px;
+}
+
+.add__assignment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

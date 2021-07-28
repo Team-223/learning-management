@@ -1,25 +1,31 @@
-.form__container {
+.anouncement__container {
+    margin: 100px;
     display: flex;
-    flex-direction: column;
-    background-color: #DBE6F8;
-    width: 900px;
 }
-.form__container form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+.add__anouncement {
     width: 100%;
-}
-.course__name, .module__name, .exercise  {
     display: flex;
-    justify-content: space-around;
-    padding: 10px 50px;
+    background-color: #DBE6F8;
+}
+
+.add__anouncement form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     width: 100%;
 }
 
-.exercise textarea {
-    height: 400px;
+.announcement__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+
+.announcement__body textarea {
+    height: 200px;
     width: 400px;
 }
 

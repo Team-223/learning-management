@@ -7,8 +7,9 @@
     font-size: 18px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 18px;
     margin-bottom: 20px;
+    margin-left: 100px;
 
 }

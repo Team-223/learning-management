@@ -8,6 +8,9 @@ import PrivateRoute from './PrivateRoute'
 import ContextProvider from './Context';
 import courseCard from './component/courseCard';
 import TeacherDashboard from './pages/TeacherDashboard';
+import AddAssignement from './pages/AddAssignment';
+import StudentModules from './components/studentModules/StudentModules';
+import AddAnouncement from './pages/AddAnouncement';
 
 function App() {
   return (
