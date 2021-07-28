@@ -19,9 +19,13 @@ function App() {
       <Router>
         <PrivateRoute exact path='/student-dashboard' component={StudentDashboard} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/' component={LandingPage} />
         <Route exact path='/course' component={courseCard} />
         <Route exact path='/teacher-dashboard' component={TeacherDashboard} />
-        <Route exact path='/' component={LandingPage} />
+        <Route exact path='/add-assignment' component={AddAssignement} />
+        <Route exact path='/course-module' component={StudentModules} />
+        <Route exact path='/add-announcements' component={AddAnouncement} />
+        {/* <Route exact path='/grades' component={Grades} /> */}
        </Router> 
     </ContextProvider>
 
