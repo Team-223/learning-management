@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './Header.module.css'
 
 function Header() {
+
     return (
         <div className={styles.header__container}>
             <div className={styles.header__left}>

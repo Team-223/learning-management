@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './AddModule.module.css'
+// import axios from 'axios'
 
 class AppModule extends React.Component {
   constructor(props) {
@@ -17,6 +18,16 @@ class AppModule extends React.Component {
     let val = event.target.value;
     this.setState({[nam]: val});
   }
+
+  // onSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { coursename, module, exercise} = this.state;
+
+  //   axios.post('/forms', { coursename, module, exercise })
+  //   .then((result) =>{
+
+  //   })
+  // }
   render() {
     return (
         <div className={styles.form__container}>
