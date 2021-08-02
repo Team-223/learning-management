@@ -1,24 +1,28 @@
 import { useContext } from "react"
 import { Redirect, Route } from "react-router";
 import { MyContext } from "./Context";
-
+import firebase from "./firebase";
+import 'firebase/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { user, gituser, name} = useContext(MyContext);
+    const { user } = useContext(MyContext);
 
     return (
         <Route
             {...rest}
             render={
                 props => {
-                    if ( (user) || (gituser) || (name)){
+                    if (user){
                         return <Component {...rest} {...props} />
-                    } else {
-                     
-                        return <Redirect to='/' />
+                    } else { 
+                        firebase.auth().signOut()
+                        return <Redirect to='/' /> 
+
+                        
                             
                         
-                       
+
+                    
                     }
                 }
             }

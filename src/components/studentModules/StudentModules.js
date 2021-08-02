@@ -1,12 +1,30 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 import styles from './StudentModules.module.css';
-import StudentExercise from './StudentExercise';
 import arrowDown from './arrow-down.svg';
 import arrowUp from './arrow-up.svg'
-import Announcement from '../announcement/Announcement'
+import firebase from '../../firebase';
+
 
 function StudentModules() {
     const [expanded, setExpanded] = useState(false);
+
+    const db = firebase.firestore();
+    const data = () => {
+
+        db.collection("modules")
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+    }
+    
+
     return (
         <div className={styles.modules__container}>
             <div className={styles.modules__row}>
@@ -22,7 +40,9 @@ function StudentModules() {
             {expanded && 
                 <div className={styles.exercise__row}>
                     <img className={styles.exercise__icon} src='/images/exercises-logo.png' alt='ex-logo' />
-                    <span className={styles.exercise__title}>Exercise 1 Tilte</span>
+                    <span  
+                        onChange={data}
+                        className={styles.exercise__title}>Exercise 1 Tilte</span>
                 </div>
             }
             

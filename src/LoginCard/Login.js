@@ -6,15 +6,21 @@ import { auth } from "../firebase";
 import { useHistory } from "react-router-dom";
 import { MyContext } from "../Context";
 
+
 function Login() {
     
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [changeState, setChangeState] = useState('Log In'); 
-    const { setGituser, setName } = useContext(MyContext);
+    // const { user,setGituser, setName } = useContext(MyContext);
+    const { user } = useContext(MyContext);
+    
+
 
     // **************************** FUNCTIONS ****************************
+
+//  GOOGLE LOGIN ADD THE RESULTS INTO FIRESTORE COLLECTIONS
     const handleLogin = async() => {
         let provider = new firebase.auth.GoogleAuthProvider();
         await firebase.auth().signInWithPopup(provider)
@@ -22,6 +28,8 @@ function Login() {
         history.push('/student-dashboard')
     }
 
+    
+    // *************** SIGN IN , REGISTER , FORGOTTEN PASSWORD ************************
     const signIn = e => {
         e.preventDefault();
         auth
@@ -59,29 +67,24 @@ function Login() {
         });
     }
 
-
-    const githubLogin = async() => {
-        let provider = new firebase.auth.GithubAuthProvider();
-        
-        await firebase
-        .auth()
-        .signInWithPopup(provider)
-        .then((results) => {
-            console.log(results);
-            let usr = results;
-            setGituser(usr);
-            history.push('/student-dashboard')
-        })
-        .catch((error) => console.log(error));
-        
-    }
-
-
-   console.log('name', setName)
-   console.log('git', setGituser)
-
     const changeToRegister = () => setChangeState('Register');
 
+//  ************************* GITHUB SIGN IN *******************************
+    // const githubLogin = async() => {
+    //     let provider = new firebase.auth.GithubAuthProvider();
+        
+    //     await firebase
+    //     .auth()
+    //     .signInWithPopup(provider)
+    //     .then((results) => {
+    //         console.log(results);
+    //         let usr = results;
+    //         setGituser(usr);
+    //         history.push('/student-dashboard')
+    //     })
+    //     .catch((error) => console.log(error));
+        
+    // }
 
 
     return (
@@ -91,7 +94,7 @@ function Login() {
                 <div className={styles.login__buttons}>
 
                     <button 
-                        onClick={githubLogin} 
+                        
                         className={styles.github}>Log in With GitHub</button>
                     <button  
                         onClick={()=> handleLogin()}
@@ -119,7 +122,7 @@ function Login() {
                     {
                         changeState == 'Register'?  
                             <input
-                                onChange={ e => setName(e.target.value)}
+                                // onChange={ e => setName(e.target.value)}
                                 placeholder='FullName'
                                 type='text' 
                             />

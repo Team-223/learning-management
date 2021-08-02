@@ -2,10 +2,26 @@ import React from 'react'
 import Header from '../components/header/Header'
 import styles from './LandingPage.module.css';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-
-
+import firebase from '../firebase';
+import 'firebase/auth';
+import { useHistory } from "react-router-dom";
 
 function LandingPage() {
+   
+    const history = useHistory();
+
+    //  GOOGLE LOGIN ADD THE RESULTS INTO FIRESTORE COLLECTIONS
+    const teacherHandleLogin = async() => {
+        let provider = new firebase.auth.GoogleAuthProvider();
+        await firebase.auth().signInWithPopup(provider)
+        .then(results => {
+            console.log(results)
+            
+        });        
+        history.push('/teacher-dashboard');
+    }
+  
+
     return (
         <div className={styles.landingpage__container}>
             <Header />
@@ -25,7 +41,9 @@ function LandingPage() {
                     <img className={styles.image} src='/images/landing-page.png' alt='landing-page' />
                 </div>
             </div>
-            <div className={styles.landingpage__teacher__login}>
+            <div
+                onClick={teacherHandleLogin} 
+                className={styles.landingpage__teacher__login}>
                 <img className={styles.teacherIcon} src='/images/teacher-icon.svg' alt='teacher-icon' />
                 <h4>Sign up here if you are a teacher</h4>
             </div>

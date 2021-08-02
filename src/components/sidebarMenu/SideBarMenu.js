@@ -2,12 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './SideBarMenu.module.css'
 
-export default function SideBarMenu({mydash, module, exercise, addAsign, announcement, addAnnouncement, grades }) {
+export default function SideBarMenu({studentdash, teacherdash, module, exercise, addAsign, announcement, addAnnouncement, grades }) {
     return (
         <div className={styles.sidebar_menu_container}>
             <div className={styles.sidebar_menu_content}>
                 <Link to='/student-dashboard'>
-                    <p>{ mydash }</p>
+                    <p>{ studentdash }</p>
+                </Link>
+                <Link to='/teacher-dashboard'>
+                    <p>{ teacherdash }</p>
                 </Link>
                 <Link to='/course-module'>
                     <p>{ module }</p>

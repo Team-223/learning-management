@@ -1,10 +1,37 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import Header from '../components/header/Header'
 import styles from './AddAnouncement.module.css'
 import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
+import firebase from '../firebase'
+
 
 function AddAnouncement() {
-    const [announcement, setAnnouncement] = useState('')
+
+    const titleRef = useRef();
+    const announcementRef = useRef();
+
+    // FIRESTORE SECTION
+    const db = firebase.firestore();
+    const addAnnouncement = (e) => {
+        e.preventDefault();
+
+        db
+        .collection('announcements')
+        .add({
+            created_at: new Date().toString(),
+            title: titleRef.current.value,
+            announcement: announcementRef.current.value,
+        })
+        .then((docRef) => {
+            console.log("Document written with ID: annpuncement added  ", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
+
+        titleRef.current.value = '';
+        announcementRef.current.value = '';
+    }
 
     
     return (
@@ -21,26 +48,29 @@ function AddAnouncement() {
                 />
             </div>
             <div className={styles.add__anouncement}>
-                <form onSubmit={announcement}>
+                <form>
                     <div className={styles.announcement__title}>
                         <p>Title of the Announcment</p>
                         <input
                         type='text'
                         name='title'
-                        onChange={setAnnouncement}
+                        ref={titleRef}
+                        
                         />
                     </div>
                     <hr size='4' width='80%' color='black'/>
                     <div className={styles.announcement__body}>
                         <textarea 
-                        
                         name='body'
-                        onChange={setAnnouncement}
+                        ref={announcementRef}
                         />
                     </div>
                     <br/>
                     <br/>
-                    <input className={styles.submit} type='submit' />
+                    <input 
+                        onClick={(e)=> addAnnouncement(e)}
+                        className={styles.submit} 
+                        type='submit' />
                 </form>
             </div>
         </div>

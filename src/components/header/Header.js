@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import styles from './Header.module.css'
 import { MyContext } from '../../Context'
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { useHistory } from "react-router-dom";
 
 function Header() {
@@ -10,20 +10,21 @@ function Header() {
     const signOut = () => {
         firebase.auth().signOut();
         history.push('/');
+        console.log('logged out successfully')
     }
 
-    const { user, name , gituser } = useContext(MyContext);
+    const { user } = useContext(MyContext);
     return (
         <div className={styles.header__container}>
             <div className={styles.header__left}>
                 <img src='../images/company-logo.png' alt='logo' />
             </div>
             <div 
-                onClick={signOut}
+                onClick={()=> signOut()}
                 className={styles.header__right}>
                 <img src='/images/login.png' alt='login' />
                 
-                <h3 className={styles.login}>{user || name || gituser? 'Logout':'Login'}</h3>
+                <h3 className={styles.login}>{user? 'Logout':'Login'}</h3>
                 
             </div>
         </div>
