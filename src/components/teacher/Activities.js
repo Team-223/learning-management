@@ -5,6 +5,7 @@ import moment from "moment";
 const Activities = ({ module }) => {
     return (
         <div className={styles.activities} key={module.id} >
+        {console.log(module)}
             <h2>{module.moduleTitle}</h2>
             <h3>{moment(module.created_at).fromNow()}</h3>
         </div>

@@ -56,9 +56,9 @@ function StudentDashboard() {
                 </div>
                 <div className={styles.dashboard__modules}>
                     {user?<span className={styles.user}>Welcome {user.displayName}</span>:''}
-                    { showAnnouncemets.map((alert)=> (
-                         <Announcement alert={alert} key={alert.id}/>
-                    ))}
+                    {showAnnouncemets && showAnnouncemets.map((alert)=> {
+                         return <Announcement alert={alert} key={alert.id}/>
+                    })}
                     
                     <StudentActivities />
                 </div>

@@ -11,7 +11,7 @@ import Activities from '../components/teacher/Activities'
 import moment from "moment";
 
 function TeacherDashboard() {
-    const { user } = useContext(MyContext);
+    const { user , showmodules, teacherModules } = useContext(MyContext);
     const db = firebase.firestore();
 
     useEffect(() => {
@@ -32,25 +32,9 @@ function TeacherDashboard() {
 
     },[]);
     
-    const [showmodules, setShowModules] = useState([]);
+    
     useEffect(()=> {
-        // teacherModules()
-        // const db = firebase.firestore();
-        db.collection("modules")
-        .onSnapshot((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-            
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            const array = []
-            let currentID = doc.id
-            let appObj = { ...doc.data(), ['id']: currentID }
-            array.push(appObj)
-            setShowModules(array)
-            console.log(showmodules, 'array of modules')
-            });
-
-        })
+        teacherModules()
     },[])
     
 
@@ -73,11 +57,12 @@ function TeacherDashboard() {
 
                 <h1>Welcome {user.displayName}</h1>
                 <div className={styles.module__container}>
+                    {console.log(showmodules)}
                     <h2 className={styles.text}>Activities</h2>
 
-                    {showmodules &&  showmodules.map((module) =>(
-                        <Activities module={module} key={module.id}/>
-                    ))}
+                    {showmodules &&  showmodules.map((module) =>{
+                        return <Activities module={module} key={module.id}/>
+                    })}
                     
                 </div>
             </div>
