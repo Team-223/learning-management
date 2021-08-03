@@ -35,7 +35,7 @@ function Filter() {
 export default Filter
 
 const Wrap = styled.div `
-    height: 420px;
+    height: 391px;
     width: 282px;
     left: 48px;
     top: 530px;
@@ -56,7 +56,6 @@ const SearchBar = styled.div `
 const Input = styled.input`
     width: 100%;
     border: none;
-    margin: 5px;
     outline: none;
 `
 const Select = styled.select`

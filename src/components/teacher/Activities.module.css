@@ -1,0 +1,16 @@
+.teacher__activities {
+    width: 100%;
+    height: 550px;
+    margin-top: 35px;
+}
+
+.activities {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+    background: #E6EEF1;
+    margin-bottom: 10px;
+}

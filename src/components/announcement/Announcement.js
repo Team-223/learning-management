@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Announcement.module.css';
 
-function Announcement() {
+function Announcement( {alert} ) {
     return (
-        <div className={styles.announcement__container}>
-            <span>no announcement currently!</span>
+        <div className={styles.announcement__container} key={alert.id}>
+            <span>{alert.announcement}</span>
         </div>
     )
 }

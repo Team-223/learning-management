@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState,useEffect} from 'react'
 import Filter from '../components/Filter'
 import Header from '../components/header/Header'
 import styles from './TeacherDashboard.module.css'
@@ -7,6 +7,8 @@ import CourseCard from '../component/courseCard'
 import firebase from '../firebase';
 import { MyContext } from '../Context';
 import { useContext } from 'react';
+import Activities from '../components/teacher/Activities'
+import moment from "moment";
 
 function TeacherDashboard() {
     const { user } = useContext(MyContext);
@@ -16,7 +18,7 @@ function TeacherDashboard() {
         db
         .collection("teachers")
         .add({
-            created_at: new Date().toString(),
+            created_at: moment().format("MMM Do YY"),
             email: user.email,
             name: user.displayName,
             uid: user.uid
@@ -27,7 +29,30 @@ function TeacherDashboard() {
         .catch((error) => {
             console.error("Error adding document: ", error);
         });
-    })
+
+    },[]);
+    
+    const [showmodules, setShowModules] = useState([]);
+    useEffect(()=> {
+        // teacherModules()
+        // const db = firebase.firestore();
+        db.collection("modules")
+        .onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+            
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            const array = []
+            let currentID = doc.id
+            let appObj = { ...doc.data(), ['id']: currentID }
+            array.push(appObj)
+            setShowModules(array)
+            console.log(showmodules, 'array of modules')
+            });
+
+        })
+    },[])
+    
 
 
     return (
@@ -44,14 +69,16 @@ function TeacherDashboard() {
                 />
                 <Filter />
             </div>
-            <div className={styles.teacher__activities}>
-                <div className={styles.activities}>
-                    <h2>added Module title</h2>
-                    <h3>Date: </h3>
-                </div>
-                <div className={styles.activities}>
-                    <h2>added Announcement</h2>
-                    <h3>Date: </h3>
+            <div className={styles.middle__container}>
+
+                <h1>Welcome {user.displayName}</h1>
+                <div className={styles.module__container}>
+                    <h2 className={styles.text}>Activities</h2>
+
+                    {showmodules &&  showmodules.map((module) =>(
+                        <Activities module={module} key={module.id}/>
+                    ))}
+                    
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import StudentModules from '../components/studentModules/StudentModules'
 import Announcement from '../components/announcement/Announcement'
+import StudentActivities from '../components/student/StudentActivities';
 import styles from './StudentDashboard.module.css'
 import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import Filter from '../components/Filter'
@@ -12,7 +13,7 @@ import { MyContext } from '../Context';
 
 
 function StudentDashboard() {
-    const { user } = useContext(MyContext);
+    const { user, showAnnouncemets, teacherAnnounment, teacherModules, showmodules } = useContext(MyContext);
 
     const db = firebase.firestore();
 
@@ -33,11 +34,14 @@ function StudentDashboard() {
         });
     })
 
+    useEffect(()=> {
+        teacherAnnounment();
+    },[]);
+
     // const { user, gituser , name} = useContext(MyContext)
     return (
         <div className={styles.dashboard__container}>
                 <Header />
-                {user?<span>Welcome {user.displayName}</span>:''}
                 <div className={styles.sidebar__container}>
                     <Container>
                         <SideBarMenu
@@ -51,8 +55,12 @@ function StudentDashboard() {
                     </Container>
                 </div>
                 <div className={styles.dashboard__modules}>
-                    <Announcement />
-                    <CourseCard />
+                    {user?<span className={styles.user}>Welcome {user.displayName}</span>:''}
+                    { showAnnouncemets.map((alert)=> (
+                         <Announcement alert={alert} key={alert.id}/>
+                    ))}
+                    
+                    <StudentActivities />
                 </div>
             </div>
     )
