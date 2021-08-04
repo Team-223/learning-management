@@ -3,7 +3,7 @@ import Filter from '../components/Filter'
 import Header from '../components/header/Header'
 import styles from './TeacherDashboard.module.css'
 import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
-import CourseCard from '../component/courseCard'
+import CourseCard from '../components/courceCards/courseCard'
 import firebase from '../firebase';
 import { MyContext } from '../Context';
 import { useContext } from 'react';
