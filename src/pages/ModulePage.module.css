@@ -1,0 +1,10 @@
+.module__container {
+    display: flex;
+    margin: 100px;
+}
+
+.module__pieces {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

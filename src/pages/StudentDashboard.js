@@ -7,6 +7,7 @@ import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import Filter from '../components/Filter'
 import Header from '../components/header/Header'
 import { Container } from '@material-ui/core'
+import CourseCard from '../components/courceCards/courseCard'
 import firebase from '../firebase';
 import { MyContext } from '../Context';
 
