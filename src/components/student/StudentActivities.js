@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './StudentActivities.module.css';
 
-function StudentActivities() {
+function StudentActivities({ modules }) {
     return (
-        <div className={styles.activities__container}>
-            <h1>HTML Course</h1>
-            <h3>15 Lessons</h3>
+        <div className={styles.activities__container} key={modules.id}>
+            <h1>{modules.courseName}</h1>
+            <h3>{modules.moduleTitle}</h3>
         </div>
     )
 }

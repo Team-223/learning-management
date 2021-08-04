@@ -28,17 +28,15 @@ const ContextProvider = ({ children }) => {
         const db = firebase.firestore();
         db.collection("modules")
         .onSnapshot((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-            
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+            console.log(querySnapshot.docs,'querysanpshot')
             const array = []
+            querySnapshot.docs.forEach((doc) => {
+            console.log(doc,'doc')
             let currentID = doc.id
             let appObj = { ...doc.data(), ['id']: currentID }
             array.push(appObj)
-            setShowModules(array)
-            console.log(showmodules, 'array of modules')
-            });
+        });
+        setShowModules(array)
 
         })
     }
@@ -46,25 +44,19 @@ const ContextProvider = ({ children }) => {
     const teacherAnnounment = () => {
         const db = firebase.firestore();
         db.collection("announcements")
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot((doc) => {
-            
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            const array = []
+        .onSnapshot((snapshot) => {
+        console.log("Current data: ", snapshot.docs);
+        const array = []
+        snapshot.docs.forEach((doc) => {
             let currentID = doc.id
             let appObj = { ...doc.data(), ['id']: currentID }
             array.push(appObj)
             setShowAnnouncemets(array)
-            console.log(showAnnouncemets, 'array of announcemets')
-            });
 
         })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
-        });
-    }
+    });
+
+}
 
 
 

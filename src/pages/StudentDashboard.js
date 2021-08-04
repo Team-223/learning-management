@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import StudentModules from '../components/studentModules/StudentModules'
 import Announcement from '../components/announcement/Announcement'
 import StudentActivities from '../components/student/StudentActivities';
@@ -33,12 +33,13 @@ function StudentDashboard() {
             console.error("Error adding document: ", error);
         });
     })
-
+    
     useEffect(()=> {
-        teacherAnnounment();
+        teacherAnnounment()
+        teacherModules()
+      
     },[]);
 
-    // const { user, gituser , name} = useContext(MyContext)
     return (
         <div className={styles.dashboard__container}>
                 <Header />
@@ -55,12 +56,16 @@ function StudentDashboard() {
                     </Container>
                 </div>
                 <div className={styles.dashboard__modules}>
+
                     {user?<span className={styles.user}>Welcome {user.displayName}</span>:''}
-                    { showAnnouncemets.map((alert)=> (
-                         <Announcement alert={alert} key={alert.id}/>
+
+                    {showAnnouncemets && showAnnouncemets.map((alert)=> (
+                        <Announcement alert={alert} key={alert.id} />
                     ))}
                     
-                    <StudentActivities />
+                    { showmodules && showmodules.map((modules) => (
+                        <StudentActivities modules={modules} key={modules.id} />
+                    ))}
                 </div>
             </div>
     )
