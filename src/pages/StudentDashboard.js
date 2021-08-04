@@ -7,7 +7,6 @@ import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import Filter from '../components/Filter'
 import Header from '../components/header/Header'
 import { Container } from '@material-ui/core'
-import CourseCard from '../component/courseCard'
 import firebase from '../firebase';
 import { MyContext } from '../Context';
 
@@ -65,6 +64,11 @@ function StudentDashboard() {
                     
                     { showmodules && showmodules.map((modules) => (
                         <StudentActivities modules={modules} key={modules.id} />
+                        
+                    ))}
+                    { showmodules && showmodules.map((module) => (
+                       
+                        <StudentModules module={module} key={module.id}/>
                     ))}
                 </div>
             </div>
