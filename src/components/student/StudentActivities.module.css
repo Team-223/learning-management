@@ -1,6 +1,6 @@
 .activities__container {
     width: 70%;
-    height: 158px;
+    height: 140px;
     background: pink;
     border-radius: 28px;
     display: flex;
@@ -8,4 +8,5 @@
     align-items: baseline;
     justify-content: space-around;
     padding-left: 37px;
+    margin-bottom: 10px;
 }

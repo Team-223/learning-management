@@ -43,21 +43,20 @@ const ContextProvider = ({ children }) => {
 
     const teacherAnnounment = () => {
         const db = firebase.firestore();
-        db.collection("annoncements")
-        .onSnapshot((querySnapshot) => {
-            console.log(querySnapshot.docs,'querysanpshot')
-            const array = []
-            querySnapshot.docs.forEach((doc) => {
-            console.log(doc,'doc')
+        db.collection("announcements")
+        .onSnapshot((snapshot) => {
+        console.log("Current data: ", snapshot.docs);
+        const array = []
+        snapshot.docs.forEach((doc) => {
             let currentID = doc.id
             let appObj = { ...doc.data(), ['id']: currentID }
             array.push(appObj)
-        });
-        setShowAnnouncemets(array)
+            setShowAnnouncemets(array)
 
         })
+    });
 
-    }
+}
 
 
 
