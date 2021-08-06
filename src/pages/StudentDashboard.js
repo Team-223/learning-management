@@ -13,7 +13,7 @@ import { MyContext } from '../Context';
 
 
 function StudentDashboard() {
-    const { user, showAnnouncemets, teacherAnnounment, teacherModules, showmodules } = useContext(MyContext);
+    const { user, showAnnouncemets, teacherAnnounment, showmodules, teacherModules } = useContext(MyContext);
 
     const db = firebase.firestore();
 
@@ -67,10 +67,7 @@ function StudentDashboard() {
                         <StudentActivities modules={modules} key={modules.id} />
                         
                     ))}
-                    { showmodules && showmodules.map((module) => (
-                       
-                        <StudentModules module={module} key={module.id}/>
-                    ))}
+                   
                 </div>
             </div>
     )
