@@ -19,10 +19,9 @@ function Module() {
                 />
             </div>
             <div className={styles.module__pieces}>
-                <StudentModules />
-                <StudentModules />
-                <StudentModules />
-                <StudentModules />
+                <StudentModules courseName='html'/>
+                <StudentModules courseName='javascript'/>
+                <StudentModules courseName='css'/>
             </div>
         </div>
     )

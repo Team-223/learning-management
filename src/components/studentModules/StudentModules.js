@@ -14,7 +14,7 @@ function StudentModules( {module} ) {
             <div className={styles.modules__row}>
                 <div className={styles.modules__left}>
                     <img  className={styles.icon} src='/images/modules-logo.png' alt='modules-logo'/>
-                        <span className={styles.modules__titile}>{module.courseName}</span>
+                        <span className={styles.modules__titile}>{module}</span>
                    
                 </div>
                 <div  className={styles.modules__right} onClick={()=> {setExpanded(expanded => !expanded) }}>
