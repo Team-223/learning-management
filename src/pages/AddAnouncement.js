@@ -50,17 +50,20 @@ function AddAnouncement() {
             <div className={styles.add__anouncement}>
                 <form>
                     <div className={styles.announcement__title}>
-                        <p>Title of the Announcment</p>
+                        {/* <p>Title of the Announcment</p> */}
                         <input
+                        className={styles.title}
+                        placeholder='Title of the Announcment'
                         type='text'
                         name='title'
                         ref={titleRef}
                         
                         />
                     </div>
-                    <hr size='4' width='80%' color='black'/>
+                    <hr size='1' width='80%' color='black'/>
                     <div className={styles.announcement__body}>
                         <textarea 
+                        placeholder='add your Announcement'
                         name='body'
                         ref={announcementRef}
                         />
