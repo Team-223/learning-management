@@ -3,6 +3,7 @@ import Header from '../components/header/Header'
 import styles from './AddAnouncement.module.css'
 import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import firebase from '../firebase'
+import { Container } from '@material-ui/core'
 
 
 function AddAnouncement() {
@@ -38,14 +39,16 @@ function AddAnouncement() {
         <div className={styles.anouncement__container}>
             <Header />
             <div className={styles.sidebar__container}>
-                <SideBarMenu 
-                    mydash='My Dashboard'
-                    module='Modules'
-                    exercise='Exercises'
-                    grades='Student Grades'
-                    addAsign='Add Assignments'
-                    addAnnouncement='Add Announcement'
-                />
+                <Container>
+                    <SideBarMenu 
+                        teacherdash='My Dashboard'
+                        teachermodule='Modules'
+                        teacherexercise='Exercises'
+                        grades='Student Grades'
+                        addAsign='Add Assignments'
+                        addAnnouncement='Add Announcement'
+                    />
+                </Container>
             </div>
             <div className={styles.add__anouncement}>
                 <form>

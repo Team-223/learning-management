@@ -9,6 +9,7 @@ import { MyContext } from '../Context';
 import { useContext } from 'react';
 import Activities from '../components/teacher/Activities'
 import moment from "moment";
+import { Container } from '@material-ui/core'
 
 function TeacherDashboard() {
     const { user , showmodules, teacherModules } = useContext(MyContext);
@@ -43,14 +44,16 @@ function TeacherDashboard() {
         <div className={styles.dashboard__container}>
             <Header />
             <div className={styles.dashboard__box}>
-                <SideBarMenu 
-                    teacherdash='My Dashboard'
-                    module='Modules'
-                    exercise='Exercises'
-                    grades='Student Grades'
-                    addAsign='Add Assignments'
-                    addAnnouncement='Add Announcement'
-                />
+                <Container>
+                    <SideBarMenu 
+                        teacherdash='My Dashboard'
+                        teachermodule='Modules'
+                        teacherexercise='Exercises'
+                        grades='Student Grades'
+                        addAsign='Add Assignments'
+                        addAnnouncement='Add Announcement'
+                    />
+                </Container>
                 <Filter />
             </div>
             <div className={styles.middle__container}>

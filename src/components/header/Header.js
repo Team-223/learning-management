@@ -8,6 +8,7 @@ import { useDarkMode } from '../darkmode/UseDarkMode';
 import { GlobalStyles } from '../darkmode/globalStyles';
 import { lightTheme, darkTheme } from '../darkmode/Themes'
 import Toggle from '../darkmode/Toggle';
+import { Link } from 'react-router-dom'
 
 function Header() {
 
@@ -29,7 +30,12 @@ function Header() {
       <GlobalStyles/>
         <div className={styles.header__container}>
             <div className={styles.header__left}>
-                <img src='../images/company-logo.png' alt='logo' />
+                <Link to='/'>
+                    <img src='../images/company-logo.png' alt='logo' />
+                    <div className={styles.hover}>
+                        <div className={styles.text}>Back to Landing page</div>
+                    </div>
+                </Link>
             </div>
             <div>
                 <Toggle theme={theme} toggleTheme={toggleTheme} />

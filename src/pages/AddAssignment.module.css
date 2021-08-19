@@ -1,6 +1,7 @@
 .assignment__container {
     display: flex;
-    margin: 100px;
+    margin-top: 100px;
+    width: 100%;
 }
 
 .add__assignment {

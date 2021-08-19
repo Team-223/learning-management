@@ -1,11 +1,36 @@
 import React from "react";
 import Header from "../components/header/Header";
 import "./exercisePage.css";
+import SideBarMenu from "../components/sidebarMenu/SideBarMenu";
+import { Container } from '@material-ui/core'
 
-function ExercisePage() {
+function ExercisePage(studentexercise) {
     return(
         <div className="main__cntr">
             <Header />
+            <div className='sidebar__container'>
+                {studentexercise ?
+                <Container>
+                    <SideBarMenu 
+                        studentdash='My Dashboard'
+                        studentmodule='Modules'
+                        studentexercise='Exercises'
+                        grades='My Grades'
+                        announcement='Announcement'
+                    /> 
+                </Container>
+                :
+                <Container>
+                    <SideBarMenu 
+                        teacherdash='My Dashboard'
+                        teachermodule='Modules'
+                        teacherexercise='Exercises'
+                        grades='Student Grades'
+                        addAsign='Add Assignments'
+                        addAnnouncement='Add Announcement'
+                    />
+                </Container> }
+            </div>
             <div className="inner__main__cntr">
                 <div className="exercise__cntr">
                     <div className="outer__ex__cntr">

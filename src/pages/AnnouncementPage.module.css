@@ -1,0 +1,17 @@
+.AnnouncementPage__container {
+    display: flex;
+    margin-top: 100px;
+}
+
+.AnnouncementPage__announce {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}

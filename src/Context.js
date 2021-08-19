@@ -24,6 +24,9 @@ const ContextProvider = ({ children }) => {
         });
     },[user]);
 
+    /**
+     * 
+     */
     const teacherModules = () => {
         const db = firebase.firestore();
         db.collection("modules")
@@ -33,9 +36,10 @@ const ContextProvider = ({ children }) => {
             querySnapshot.docs.forEach((doc) => {
             console.log(doc,'doc')
             let currentID = doc.id
-            let appObj = { ...doc.data(), ['id']: currentID }
+            let appObj = {...doc.data(),['id']: currentID }
             array.push(appObj)
         });
+        console.log(array, 'Array')
         setShowModules(array)
 
         })
@@ -49,7 +53,7 @@ const ContextProvider = ({ children }) => {
         const array = []
         snapshot.docs.forEach((doc) => {
             let currentID = doc.id
-            let appObj = { ...doc.data(), ['id']: currentID }
+            let appObj = { ...doc.data(), 'id': currentID }
             array.push(appObj)
             setShowAnnouncemets(array)
 

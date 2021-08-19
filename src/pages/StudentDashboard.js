@@ -47,7 +47,7 @@ function StudentDashboard() {
                     <Container>
                         <SideBarMenu
                             studentdash='My Dashboard'
-                            module='Module'
+                            studentmodule='Module'
                             exercise='Exercise'
                             grades='My Grades'
                             announcement='Announcements'
@@ -63,8 +63,8 @@ function StudentDashboard() {
                         <Announcement alert={alert} key={alert.id} />
                     ))}
                     
-                    { showmodules && showmodules.map((modules) => (
-                        <StudentActivities modules={modules} key={modules.id} />
+                    { showmodules && showmodules.map((module) => (
+                        <StudentActivities module={module} key={module.id} />
                         
                     ))}
                    

@@ -1,22 +1,18 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import Header from '../components/header/Header'
-import StudentModules from '../components/studentModules/StudentModules'
-import TeacherModules from '../components/teacher/TeacherModules'
-import styles from './ModulePage.module.css'
+import styles from './Grades.module.css'
+import { Container } from '@material-ui/core'
+import StudentExercise from '../components/studentModules/StudentExercise'
+import TeacherExercise from '../components/teacher/TeacherExercise'
 import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import { MyContext } from '../Context'
-import { Container } from '@material-ui/core'
 
-function Module({studentmodule}) {
+function Grades(studentmodule) {
     const { showmodules, teacherModules } = useContext(MyContext);
 
-    useEffect(() => {
-        teacherModules();
-    },[])
-    
     return (
-        <div className={styles.module__container}>
-            <Header />
+        <div className={styles.grades__container}>
+            <Header/>
             <div className={styles.sidebar__container}>
                 {studentmodule ?
                 <Container>
@@ -43,15 +39,15 @@ function Module({studentmodule}) {
             <div className={styles.module__pieces}>
                 {studentmodule ? 
              showmodules && showmodules.map((module) => (
-                       <StudentModules module={module.courseName} key={module.id}/>
+                       <StudentExercise module={module.courseName} key={module.id}/>
                    ))
                    :
                    showmodules && showmodules.map((module) => (
-                       <TeacherModules module={module.courseName} key={module.id}/>
+                       <TeacherExercise module={module.courseName} key={module.id}/>
                    ))}
             </div>
         </div>
     )
 }
 
-export default Module
+export default Grades

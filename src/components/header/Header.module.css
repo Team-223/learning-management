@@ -15,6 +15,41 @@
     height: 61.22px;
 }
 
+.hover {
+        opacity: 0;
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        width: 200px;
+        height: 100px;
+        -webkit-transition: all 400ms ease-out;
+        -moz-transition: all 400ms ease-out;
+        -o-transition: all 400ms ease-out;
+        -ms-transition: all 400ms ease-out;
+        transition: all 400ms ease-out;
+        text-align: center;
+}
+
+.header__left .hover:hover {
+    opacity: 1;
+}
+
+.header__left .hover .text {
+    color: red;
+        height: 0;
+        opacity: 1;
+        transition-delay: 0s;
+        transition-duration: 0.4s;
+}
+
+.header__left .hover:hover .text {
+        opacity: 1;
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+}
+
 .header__right {
     width: 62.22px;
     height: 68px;

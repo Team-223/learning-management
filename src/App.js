@@ -11,6 +11,9 @@ import TeacherDashboard from './pages/TeacherDashboard';
 import AddAssignement from './pages/AddAssignment';
 import ModulePage from './pages/ModulePage';
 import AddAnouncement from './pages/AddAnouncement';
+import AnnouncementPage from './pages/AnnouncementPage';
+import ExercisePage from './pages/exercisePage';
+import Grades from './pages/Grades';
 
 
 function App() {
@@ -23,10 +26,14 @@ function App() {
         <PrivateRoute exact path='/student-dashboard' component={StudentDashboard} />
         <PrivateRoute exact path='/teacher-dashboard' component={TeacherDashboard} />
         <Route exact path='/course' component={courseCard} />
-        <Route exact path='/add-assignment' component={AddAssignement} />
-        <Route exact path='/course-module' component={ModulePage} />
-        <Route exact path='/add-announcements' component={AddAnouncement} />
-        {/* <Route exact path='/grades' component={Grades} /> */}
+        <Route exact path='/teacher-dashboard/add-assignment' component={AddAssignement} />
+        <Route exact path='/student-module' component={ModulePage} />
+        <Route exact path='/teacher-module' component={ModulePage} />
+        <Route exact path='/teacher-dashboard/add-announcements' component={AddAnouncement} />
+        <Route exact path='/announcements' component={AnnouncementPage} />
+        <Route exact path='/teacher-exercises' component={ExercisePage} />
+        <Route exact path='/student-exercises' component={ExercisePage} />
+        <Route exact path='/grades' component={Grades} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/' component={LandingPage} />
        </Router>    

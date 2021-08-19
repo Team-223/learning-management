@@ -34,7 +34,7 @@ function LandingPage() {
                 <div className={styles.landingpage__middle__left}>
                     <h1 className={styles.text}>Get your path with coding</h1>
                     <Link to='/login'>
-                        <button className={styles.sign_btn}>Sing up & code</button>
+                        <button className={styles.sign_btn}>Sign up & code</button>
                     </Link>
                 </div>
                 <div className={styles.landingpage__middle__right}>
@@ -47,7 +47,7 @@ function LandingPage() {
                 <img className={styles.teacherIcon} src='/images/teacher-icon.svg' alt='teacher-icon' />
                 <h4>Sign up here if you are a teacher</h4>
             </div>
-            <footer>Copyrights 2021 | Team LMS</footer>
+            <footer>Copyrights 2021 | Team LMS - Huda Rahma, Liz Frost, Carlos Negron, Eric Hodge</footer>
         </div>
     )
 }

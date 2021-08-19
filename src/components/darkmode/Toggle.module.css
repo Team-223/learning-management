@@ -1,0 +1,39 @@
+      .example {
+        position: relative;
+        padding: 0;
+        width: 320px;
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .content {
+        opacity: 0;
+        font-size: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #1c87c9;
+        width: 320px;
+        height: 50px;
+        -webkit-transition: all 400ms ease-out;
+        -moz-transition: all 400ms ease-out;
+        -o-transition: all 400ms ease-out;
+        -ms-transition: all 400ms ease-out;
+        transition: all 400ms ease-out;
+        text-align: end;
+      }
+      .example .content:hover {
+        opacity: 1;
+      }
+      .example .content .text {
+        color: red;
+        height: 0;
+        opacity: 1;
+        transition-delay: 0s;
+        transition-duration: 0.4s;
+      }
+      .example .content:hover .text {
+        opacity: 1;
+        transform: translateY(50px);
+        -webkit-transform: translateY(8px);
+      }

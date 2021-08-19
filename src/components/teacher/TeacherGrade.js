@@ -1,14 +1,14 @@
 import React from 'react'
-import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
-import styles from './AddAssignment.module.css'
-import AddModule from '../components/upload/AddModule'
-import Header from '../components/header/Header'
-import { Container } from '@material-ui/core'
+import { MyContext } from '../../Context'
+import Header from '../header/Header'
+import styles from './TeacherGrades.module.css'
+import { Container } from '..Context'
 
-function AddAssignement() {
+function TeacherGrade() {
+    const { user, showGrades } = useContext(MyContext)
     return (
-        <div className={styles.assignment__container}>
-            <Header />
+        <div className={styles.teacherGrade__container}>
+            <Header/>
             <div className={styles.sidebar__container}>
                 <Container>
                     <SideBarMenu 
@@ -21,11 +21,8 @@ function AddAssignement() {
                     />
                 </Container>
             </div>
-            <div className={styles.add__Assignement}>
-                <AddModule />
-            </div>
         </div>
     )
 }
 
-export default AddAssignement
+export default TeacherGrade

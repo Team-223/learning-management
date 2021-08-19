@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background-color: #DBE6F8;
-    width: 900px;
 }
 .form__container form {
     display: flex;
@@ -35,7 +34,8 @@
     text-align: center;
     letter-spacing: 0.06em;
     border: none;
-    cursor: pointer
+    cursor: pointer;
+    margin-bottom: 50px;
 }
 
 .submit:hover {

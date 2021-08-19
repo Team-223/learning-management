@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-import styles from './StudentModules.module.css';
-import arrowDown from './arrow-down.svg';
-import arrowUp from './arrow-up.svg'
+import styles from './TeacherModule.module.css';
+import arrowDown from '../studentModules/arrow-down.svg'
+import arrowUp from '../studentModules/arrow-up.svg'
 
 
 
-function StudentModules( {module} ) {
+function TeacherModules( {module} ) {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -40,4 +40,4 @@ function StudentModules( {module} ) {
     )
 }
 
-export default StudentModules
+export default TeacherModules
