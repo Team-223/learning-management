@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './SideBarMenu.module.css'
 
-export default function SideBarMenu({studentdash, teacherdash, studentmodule, teachermodule, teacherexercise, studentexercise, addAsign, announcement, addAnnouncement, grades }) {
+export default function SideBarMenu({studentdash, teacherdash, studentmodule, teachermodule, teacherexercise, studentexercise, addAsign, announcement, addAnnouncement, teachergrades, studentgrades }) {
     return (
         <div className={styles.sidebar_menu_container}>
             <div className={styles.sidebar_menu_content}>
@@ -27,8 +27,11 @@ export default function SideBarMenu({studentdash, teacherdash, studentmodule, te
                 <Link to='/teacher-dashboard/add-assignment'>
                     <p>{ addAsign }</p>
                 </Link>
-                <Link to='/grades'>
-                    <p>{ grades }</p>
+                <Link to='/teacher-grades'>
+                    <p>{ teachergrades }</p>
+                </Link>
+                <Link to='/student-grades'>
+                    <p>{ studentgrades }</p>
                 </Link>
                 <Link to='/teacher-dashboard/add-announcements'>
                     <p>{ addAnnouncement }</p>

@@ -15,7 +15,7 @@ function LandingPage() {
         let provider = new firebase.auth.GoogleAuthProvider();
         await firebase.auth().signInWithPopup(provider)
         .then(results => {
-            console.log(results)
+            console.log("results", results)
             
         });        
         history.push('/teacher-dashboard');

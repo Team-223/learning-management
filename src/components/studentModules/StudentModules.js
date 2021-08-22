@@ -28,7 +28,7 @@ function StudentModules( {module} ) {
                 <div className={styles.exercise__row}>
                     <img className={styles.exercise__icon} src='/images/exercises-logo.png' alt='ex-logo' />
                     <span  
-            
+            {...console.log('student module', module.exercise)}
                         className={styles.exercise__title}>{module.exercise}</span>
                 </div>
             

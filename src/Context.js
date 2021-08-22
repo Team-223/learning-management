@@ -36,7 +36,7 @@ const ContextProvider = ({ children }) => {
             querySnapshot.docs.forEach((doc) => {
             console.log(doc,'doc')
             let currentID = doc.id
-            let appObj = {...doc.data(),['id']: currentID }
+            let appObj = { ...doc.data(), ['id']: currentID }
             array.push(appObj)
         });
         console.log(array, 'Array')
@@ -53,7 +53,7 @@ const ContextProvider = ({ children }) => {
         const array = []
         snapshot.docs.forEach((doc) => {
             let currentID = doc.id
-            let appObj = { ...doc.data(), 'id': currentID }
+            let appObj = { ...doc.data(), ['id']: currentID }
             array.push(appObj)
             setShowAnnouncemets(array)
 

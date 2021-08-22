@@ -16,9 +16,9 @@ function AnnouncementPage() {
                 <Container>
                     <SideBarMenu
                         studentdash='My Dashboard'
-                        studentmodule='Module'
-                        exercise='Exercise'
-                        grades='My Grades'
+                        studentmodule='Modules'
+                        studentexercise='Exercises'
+                        studentgrades='My Grades'
                         announcement='Announcements'
                     />
                 </Container>

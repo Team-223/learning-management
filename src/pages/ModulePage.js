@@ -7,47 +7,48 @@ import SideBarMenu from '../components/sidebarMenu/SideBarMenu'
 import { MyContext } from '../Context'
 import { Container } from '@material-ui/core'
 
-function Module({studentmodule}) {
-    const { showmodules, teacherModules } = useContext(MyContext);
+function Module() {
+    const {user, showmodules, teacherModules } = useContext(MyContext);
 
     useEffect(() => {
         teacherModules();
     },[])
-    
+    console.log('blah, blah', user)
     return (
         <div className={styles.module__container}>
             <Header />
             <div className={styles.sidebar__container}>
-                {studentmodule ?
-                <Container>
-                    <SideBarMenu 
-                        studentdash='My Dashboard'
-                        studentmodule='Modules'
-                        studentexercise='Exercises'
-                        grades='My Grades'
-                        announcement='Announcement'
-                    /> 
-                </Container>
-                :
+                {/* {teacherModules ?
                 <Container>
                     <SideBarMenu 
                         teacherdash='My Dashboard'
                         teachermodule='Modules'
                         teacherexercise='Exercises'
-                        grades='Student Grades'
+                        teachergrades='Student Grades'
                         addAsign='Add Assignments'
-                        addAnnouncement='Add Announcement'
+                        addAnnouncement='Add Announcements'
                     />
-                </Container> }
+                </Container> 
+                : */}
+                <Container>
+                    <SideBarMenu 
+                        studentdash='My Dashboard'
+                        studentmodule='Modules'
+                        studentexercise='Exercises'
+                        studentgrades='My Grades'
+                        announcement='Announcements'
+                    /> 
+                </Container>
+
             </div>
             <div className={styles.module__pieces}>
-                {studentmodule ? 
-             showmodules && showmodules.map((module) => (
-                       <StudentModules module={module.courseName} key={module.id}/>
-                   ))
-                   :
-                   showmodules && showmodules.map((module) => (
-                       <TeacherModules module={module.courseName} key={module.id}/>
+                {/* {teacherModules ? 
+                 showmodules && showmodules.map((module) => (
+                     <TeacherModules module={module.courseName} key={module.id}/>
+                 )): */}
+             {showmodules && showmodules.map((module) => (
+    
+                       <StudentModules module={module} key={module.id}/>
                    ))}
             </div>
         </div>

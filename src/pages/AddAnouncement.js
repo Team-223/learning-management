@@ -44,7 +44,7 @@ function AddAnouncement() {
                         teacherdash='My Dashboard'
                         teachermodule='Modules'
                         teacherexercise='Exercises'
-                        grades='Student Grades'
+                        teachergrades='Student Grades'
                         addAsign='Add Assignments'
                         addAnnouncement='Add Announcement'
                     />

@@ -6,7 +6,8 @@ function StudentActivities({ module }) {
     console.log('module',module)
     return (
         <div className={styles.activities__container} key={module.id}>
-            <Link to='/course-module'>
+            <Link to='/student-module'>
+                {console.log('student activities', module)}
             <h1>{module.courseName}</h1>
             <h3>{module.moduleTitle}</h3>
             </Link>

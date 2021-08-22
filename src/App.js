@@ -33,7 +33,8 @@ function App() {
         <Route exact path='/announcements' component={AnnouncementPage} />
         <Route exact path='/teacher-exercises' component={ExercisePage} />
         <Route exact path='/student-exercises' component={ExercisePage} />
-        <Route exact path='/grades' component={Grades} />
+        <Route exact path='/teacher-grades' component={Grades} />
+        <Route exact path='/student-grades' component={Grades} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/' component={LandingPage} />
        </Router>    
